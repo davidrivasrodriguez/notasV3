@@ -1,19 +1,33 @@
 import { HttpFetch } from "./modules/HttpFetch.js";
 import { UIBuilder } from "./modules/UIBuilder.js";
-function hola(a){
-    console.log('Datos listos' + a)
-}
-
+import { Mapper } from "./mapper/Mapper.js";
 
 const httpFetch = new HttpFetch('http://localhost:3000');
 httpFetch.obtenerUI('', (datos) => {
-    UIBuilder.build(datos);
-    /*
-    const contenedor = document.getElementById("main_container");
-    datos.panels.forEach(element => {
-        const div = document.createElement('div');
-        div.setAttribute('class', element.cssData);
-        contenedor.appendChild(div)
-    });
-    */
+    setupPanelSelection(datos);
 });
+
+function setupPanelSelection(data) {
+    const panelSelect = document.getElementById('panelSelect');
+    panelSelect.addEventListener('change', (event) => {
+        const selectedPanel = event.target.value;
+        showPanel(selectedPanel, data);
+    });
+}
+
+function showPanel(panelName, data) {
+    const contenedor = document.getElementById("main_container");
+    contenedor.innerHTML = '';
+
+    const panelData = data.panels.find(panel => panel.panelName === panelName);
+    if (panelData) {
+        const panel = Mapper.createPanel(panelData);
+        contenedor.appendChild(panel);
+
+        const components = data.components.filter(component => component.father === panelName);
+        components.forEach(componentData => {
+            const component = Mapper.createComponent(componentData);
+            panel.appendChild(component);
+        });
+    }
+}
