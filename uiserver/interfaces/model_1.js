@@ -4,16 +4,16 @@ export const model1 = {
             type: "panel",
             panelName: 'panel1',
             panelDescription: 'panel1 description',
-            panelWidth: '100',
-            panelHeight: '100',
+            panelWidth: '300',
+            panelHeight: '300',
             cssData: 'panel_style_1'
         },
         {
             type: "panel",
             panelName: 'panel2',
             panelDescription: 'panel2 description',
-            panelWidth: '100',
-            panelHeight: '100',
+            panelWidth: '300',
+            panelHeight: '300',
             cssData: 'panel_style_1'
         }
     ],
@@ -21,13 +21,13 @@ export const model1 = {
         {
             type: 'boton',
             father: 'panel1',
-            content: 'Pulsa aquí',
+            content: 'Pulsa aquí BOTON1',
             position: '0,0'
         },
         {
             type: 'boton',
             father: 'panel2',
-            content: 'Pulsa aquí',
+            content: 'Pulsa aquí BOTON2',
             position: '0,0'
         }
     ]
