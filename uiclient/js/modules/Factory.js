@@ -6,7 +6,7 @@ export class Factory {
         this.items = [];
     }
 
-    create(type, ...args) {
+    static create(type, ...args) {
         let item;
         switch (type) {
             case 'panel':
