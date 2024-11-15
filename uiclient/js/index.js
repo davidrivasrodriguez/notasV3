@@ -29,5 +29,11 @@ function showPanel(panelName, data) {
             const component = Mapper.createComponent(componentData);
             panel.appendChild(component);
         });
+
+        const notes = data.notes.filter(note => note.father === panelName);
+        notes.forEach(noteData => {
+            const note = Mapper.createNote(noteData);
+            panel.appendChild(note);
+        });
     }
 }

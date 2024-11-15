@@ -1,28 +1,18 @@
 import { Panel } from '../classes/Panel.js';
 import { Component } from '../classes/Component.js';
+import { Note } from '../classes/Note.js';
 
-export class Factory {
-    constructor() {
-        this.items = [];
-    }
-
-    static create(type, ...args) {
-        let item;
+export const Factory = {
+    create(type, ...args) {
         switch (type) {
             case 'panel':
-                item = new Panel(...args);
-                break;
+                return new Panel(...args);
             case 'component':
-                item = new Component(...args);
-                break;
+                return new Component(...args);
+            case 'note':
+                return new Note(...args);
             default:
                 throw new Error('Invalid type');
         }
-        this.items.push(item);
-        return item;
     }
-
-    getItems() {
-        return this.items;
-    }
-}
+};
