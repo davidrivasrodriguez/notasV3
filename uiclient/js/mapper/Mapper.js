@@ -22,23 +22,66 @@ export const Mapper = {
     createNote(noteData) {
         const note = Factory.create('note', noteData.type, noteData.father, noteData.content, noteData.position);
         const div = document.createElement("div");
-        div.textContent = note.content;
         div.classList.add('note');
         div.style.left = note.position.split(',')[0] + 'px';
         div.style.top = note.position.split(',')[1] + 'px';
         div.draggable = true;
 
-        div.addEventListener('dragstart', (e) => {
-            e.dataTransfer.setData('text/plain', null);
-            e.dataTransfer.setDragImage(div, 0, 0);
-            div.classList.add('dragging');
-        });
+        // Determinar el noteType inicial si es en panel2
+        if (noteData.father === 'panel2') {
+            const panel = document.getElementById('panel2');
+            const panelWidth = panel.offsetWidth;
+            const positionX = parseInt(div.style.left);
 
+            if (positionX < panelWidth / 2) {
+                noteData.noteType = 'critical';
+            } else {
+                noteData.noteType = 'normal';
+            }
+        }
+
+        // Aplicar estilos según el noteType
+        if (noteData.noteType === 'critical') {
+            div.style.backgroundColor = 'red';
+            div.style.color = 'white';
+        } else {
+            div.style.backgroundColor = 'white';
+            div.style.color = 'black';
+        }
+
+        // Añadir título
+        const title = document.createElement("h3");
+        title.textContent = noteData.title;
+        div.appendChild(title);
+
+        // Añadir contenido
+        const content = document.createElement("p");
+        content.textContent = note.content;
+        div.appendChild(content);
+
+        // Evento dragend para actualizar noteType y estilos según nueva posición
         div.addEventListener('dragend', (e) => {
             div.classList.remove('dragging');
             const rect = div.parentElement.getBoundingClientRect();
-            div.style.left = (e.clientX - rect.left) + 'px';
-            div.style.top = (e.clientY - rect.top) + 'px';
+            const newLeft = e.clientX - rect.left;
+            const newTop = e.clientY - rect.top;
+            div.style.left = `${newLeft}px`;
+            div.style.top = `${newTop}px`;
+
+            // Actualizar noteType si está en panel2
+            if (noteData.father === 'panel2') {
+                const panelWidth = div.parentElement.offsetWidth;
+
+                if (newLeft < panelWidth / 2) {
+                    noteData.noteType = 'critical';
+                    div.style.backgroundColor = 'red';
+                    div.style.color = 'white';
+                } else {
+                    noteData.noteType = 'normal';
+                    div.style.backgroundColor = 'white';
+                    div.style.color = 'black';
+                }
+            }
         });
 
         return div;
