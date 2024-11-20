@@ -8,6 +8,7 @@ export const Mapper = {
         div.setAttribute("class", panel.cssData);
         div.style.width = panel.panelWidth + 'px';
         div.style.height = panel.panelHeight + 'px';
+        div.style.position = 'relative';
         return div;
     },
 
@@ -26,10 +27,20 @@ export const Mapper = {
         div.style.left = note.position.split(',')[0] + 'px';
         div.style.top = note.position.split(',')[1] + 'px';
         div.draggable = true;
+
         div.addEventListener('dragstart', (e) => {
             e.dataTransfer.setData('text/plain', null);
             e.dataTransfer.setDragImage(div, 0, 0);
+            div.classList.add('dragging');
         });
+
+        div.addEventListener('dragend', (e) => {
+            div.classList.remove('dragging');
+            const rect = div.parentElement.getBoundingClientRect();
+            div.style.left = (e.clientX - rect.left) + 'px';
+            div.style.top = (e.clientY - rect.top) + 'px';
+        });
+
         return div;
     }
 };

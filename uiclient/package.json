@@ -5,8 +5,11 @@
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server" : "docker run -dit --name my-apache-app -p 8081:80 -v ${PWD}:/usr/local/apache2/htdocs/ httpd:2.4"
+    "server": "docker run -dit --name my-apache-app -p 8081:80 -v ${PWD}:/usr/local/apache2/htdocs/ httpd:2.4"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "uiclient": "file:"
+  }
 }
