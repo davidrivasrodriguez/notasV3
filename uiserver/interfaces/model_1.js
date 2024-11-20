@@ -4,16 +4,16 @@ export const model1 = {
             type: "panel",
             panelName: 'panel1',
             panelDescription: 'panel1 description',
-            panelWidth: '600',
-            panelHeight: '600',
+            panelWidth: '',
+            panelHeight: '',
             cssData: 'panel_style_1'
         },
         {
             type: "panel",
             panelName: 'panel2',
             panelDescription: 'panel2 description',
-            panelWidth: '600',
-            panelHeight: '600',
+            panelWidth: '',
+            panelHeight: '',
             cssData: 'panel_style_1'
         }
     ],
