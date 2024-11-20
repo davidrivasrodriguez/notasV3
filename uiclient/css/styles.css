@@ -1,26 +1,26 @@
 body {
-    background-color: #121212;
-    color: #e0e0e0;
+  background-color: #121212;
+  color: #e0e0e0;
 }
 
 .note {
-    position: absolute;
-    background-color: #ffffff; 
-    color: #000;
-    padding: 10px;
-    border-radius: 0; 
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-    pointer-events: auto;
-    transition: transform 0.2s ease-in-out;
-    cursor: grab; 
-    min-width: 100px;
-    max-width: 300px; 
-    word-wrap: break-word;
+  position: absolute;
+  background-color: #ffffff;
+  color: #000;
+  padding: 10px;
+  border-radius: 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  pointer-events: auto;
+  transition: transform 0.2s ease-in-out;
+  cursor: grab;
+  min-width: 100px;
+  max-width: 300px;
+  word-wrap: break-word;
 }
 
 .note.dragging {
-    opacity: 0.8;
-    transform: scale(1.1);
+  opacity: 0.8;
+  transform: scale(1.1);
 }
 
 /* .note-header {
@@ -29,32 +29,35 @@ body {
     cursor: move; 
 } */
 
-#label, #filters {
-    margin-bottom: 20px;
-    color: #e0e0e0;
+#label,
+#filters {
+  margin-bottom: 20px;
+  color: #e0e0e0;
 }
 
-#panelSelect, #monthFilter, #yearFilter {
-    margin-left: 10px;
-    padding: 5px;
-    border: 1px solid #888;
-    border-radius: 5px;
-    background-color: #444;
-    color: #e0e0e0;
+#panelSelect,
+#monthFilter,
+#yearFilter {
+  margin-left: 10px;
+  padding: 5px;
+  border: 1px solid #888;
+  border-radius: 5px;
+  background-color: #444;
+  color: #e0e0e0;
 }
 
-#monthFilter, #yearFilter {
-    /* box-shadow: 
+#monthFilter,
+#yearFilter {
+  /* box-shadow: 
         0 0 10px #a020f0, 
         0 0 20px #b030f5, 
         0 0 30px #c040f8, 
         0 0 40px #d050ff, 
         0 0 50px #e060ff; */
-    }
-         
+}
 
-#panelSelect{
-     /* box-shadow: 
+#panelSelect {
+  /* box-shadow: 
     0 0 10px #fff, 
     0 0 20px #fff, 
     0 0 30px #f8f8f8, 
@@ -63,14 +66,14 @@ body {
 }
 
 button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #555;
-    color: #e0e0e0;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    /* box-shadow: 
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #555;
+  color: #e0e0e0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  /* box-shadow: 
     0 0 10px #ff0000, 
     0 0 20px #ff0000, 
     0 0 30px #ff4500, 
@@ -79,55 +82,55 @@ button {
 }
 
 button:hover {
-    background-color: #777;
+  background-color: #777;
 }
 
 #main_container {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
-    width: 90%;
-    max-width: 90%;
-    height: 70vh; 
-    background-color: #444242;
-    box-shadow: 
-    0 0 5px #0ff, 
-    0 0 10px #0ff, 
-    0 0 20px #0ff, 
-    0 0 40px #0ff;
-    border-radius: 5px;
-    padding: 4rem;
-    margin-left: 4rem;
-    overflow-y: auto; 
-    position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  width: 80%;
+  max-width: 80%;
+  height: 60vh;
+  background-color: #444242;
+  box-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff;
+  border-radius: 5px;
+  padding: 4rem;
+  margin-left: 4rem;
+  overflow-y: auto;
+  position: relative;
+  overflow: hidden;
 }
 
 .divider {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 2px;
-    height: 100%;
-    background-color: black;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  background-color: black;
+
+  box-shadow: 0 0 10px #a020f0, 0 0 20px #b030f5, 0 0 30px #c040f8,
+    0 0 40px #d050ff, 0 0 50px #e060ff;
 }
 
-.selector-container{
-    flex: 1;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2rem 4rem;
+.selector-container {
+  flex: 1;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 4rem;
 }
 
 .note h3 {
-    margin: 0;
-    font-size: 1.2em;
-    font-weight: bold;
+  margin: 0;
+  font-size: 1.2em;
+  font-weight: bold;
 }
 
 .note p {
-    margin: 5px 0 0 0;
+  margin: 5px 0 0 0;
 }

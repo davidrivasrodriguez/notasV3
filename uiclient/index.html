@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Panels</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
     <div class="selector-container">
-        <div id="label">
-            <label for="panelSelect">Select a Panel</label>
-            <select id="panelSelect">
-                <option value="">Select a Panel</option>
-                <option value="panel1">Panel 1</option>
-                <option value="panel2">Panel 2</option>
-            </select>
-        </div>
-        <div id="filters">
-            <label for="monthFilter">Filter by Month</label>
-            <input type="month" id="monthFilter">
-            <label for="yearFilter">Filter by Year</label>
-            <input type="number" id="yearFilter" min="2000" max="2100">
-        </div>
-        <button id="alignNotesButton">Align Notes</button>
+      <div id="label">
+        <label for="panelSelect">Select a Panel</label>
+        <select id="panelSelect">
+          <option value="">Select a Panel</option>
+          <option value="panel1">Panel 1</option>
+          <option value="panel2">Panel 2</option>
+        </select>
+      </div>
+      <div id="filters">
+        <label for="monthFilter">Filter by Month</label>
+        <input type="month" id="monthFilter" />
+        <label for="yearFilter">Filter by Year</label>
+        <input type="number" id="yearFilter" min="2000" max="2100" />
+      </div>
+      <button id="alignNotesButton">Align Notes</button>
     </div>
-    <div id="main_container">
-        <div class="divider"></div>
+    <div id="main_container" style="display: none">
+      <!-- El contenido del panel se agregará dinámicamente aquí -->
     </div>
     <script type="module" src="js/index.js"></script>
-</body>
+  </body>
 </html>
