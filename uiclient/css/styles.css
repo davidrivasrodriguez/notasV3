@@ -1,6 +1,5 @@
 body {
     color: white;
-
     background-color: #333;
 }
 
@@ -12,41 +11,21 @@ body {
     height: 100vh;
 }
 
-#panel1 {
+#panel1, #panel2 {
     background-color: red;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    position: relative;
 }
 
-#panel2 {
-    background-color: blue;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#panel1 > div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    color : white;
-    padding: 1rem;
-    border: 1px solid white;
-    cursor: pointer;
-}
-
-#panel2 > div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    color : white;
-    border: 1px solid white;
-    padding: 1rem;
-    cursor: pointer;
+.note {
+    position: absolute;
+    background-color: yellow;
+    padding: 10px;
+    border: 1px solid black;
+    cursor: move;
 }
