@@ -1,6 +1,8 @@
 body {
-    color: white;
+    color: #fff;
     background-color: #333;
+    margin: 0;
+    font-family: Arial, sans-serif;
 }
 
 #main_container {
@@ -9,23 +11,53 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
+    width: 100vw;
+    padding: 0;
+    margin: 0;
 }
 
 #panel1, #panel2 {
-    background-color: red;
+    background-color: #444;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 80%;
-    height: 80%;
-    margin: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
     position: relative;
+    overflow: auto;
 }
 
 .note {
     position: absolute;
-    background-color: yellow;
-    padding: 10px;
-    border: 1px solid black;
+    background-color: #fff;
+    color: #333;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     cursor: move;
+    width: 200px;
+    height: 150px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.note .note-header {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.note .note-content {
+    flex-grow: 1;
+}
+
+.note .note-footer {
+    text-align: right;
+    font-size: 0.8em;
+    color: #666;
 }

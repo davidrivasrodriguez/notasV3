@@ -21,13 +21,13 @@ export const model1 = {
         {
             type: 'boton',
             father: 'panel1',
-            content: 'Pulsa aquí BOTON1',
+            content: '',
             position: '0,0'
         },
         {
             type: 'boton',
             father: 'panel2',
-            content: 'Pulsa aquí BOTON2',
+            content: '',
             position: '0,0'
         }
     ],
