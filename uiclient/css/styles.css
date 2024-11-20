@@ -111,9 +111,6 @@ button:hover {
   width: 2px;
   height: 100%;
   background-color: black;
-
-  box-shadow: 0 0 10px #a020f0, 0 0 20px #b030f5, 0 0 30px #c040f8,
-    0 0 40px #d050ff, 0 0 50px #e060ff;
 }
 
 .selector-container {
