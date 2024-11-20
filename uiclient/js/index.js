@@ -6,6 +6,7 @@ const httpFetch = new HttpFetch('http://localhost:3000');
 httpFetch.obtenerUI('', (datos) => {
     setupPanelSelection(datos);
     setupFilters(datos);
+    setupAlignButton();
 });
 
 function setupPanelSelection(data) {
@@ -27,6 +28,11 @@ function setupFilters(data) {
     yearFilter.addEventListener('change', () => {
         filterNotes(data);
     });
+}
+
+function setupAlignButton() {
+    const alignButton = document.getElementById('alignNotesButton');
+    alignButton.addEventListener('click', alignNotes);
 }
 
 function filterNotes(data) {
@@ -67,6 +73,27 @@ function showPanel(panelName, data) {
         notes.forEach(noteData => {
             const note = Mapper.createNote(noteData);
             panel.appendChild(note);
+        });
+    }
+}
+
+function alignNotes() {
+    const panel = document.querySelector('#main_container > div');
+    if (panel) {
+        const notes = panel.querySelectorAll('.note');
+        let x = 10;
+        let y = 10;
+        const gap = 10;
+
+        notes.forEach(note => {
+            note.style.left = `${x}px`;
+            note.style.top = `${y}px`;
+            y += note.offsetHeight + gap;
+
+            if (y + note.offsetHeight > panel.offsetHeight) {
+                y = 10;
+                x += note.offsetWidth + gap;
+            }
         });
     }
 }

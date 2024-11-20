@@ -52,6 +52,47 @@ export const model1 = {
             content: 'Nota 3 en Panel 2',
             position: '200,200',
             date: '2023-03-25'
+        }, {
+            type: 'note',
+            father: 'panel1',
+            content: 'Nota 1 en Panel 1',
+            position: '50,50',
+            date: '2023-01-15'
+        },
+        {
+            type: 'note',
+            father: 'panel2',
+            content: 'Nota 2 en Panel 2',
+            position: '100,100',
+            date: '2023-02-20'
+        },
+        {
+            type: 'note',
+            father: 'panel2',
+            content: 'Nota 2 en Panel 2',
+            position: '200,200',
+            date: '2023-03-25'
+        },
+        {
+            type: 'note',
+            father: 'panel1',
+            content: 'Nota 1 en Panel 1',
+            position: '50,50',
+            date: '2023-01-15'
+        },
+        {
+            type: 'note',
+            father: 'panel2',
+            content: 'Nota 4 en Panel 2',
+            position: '100,100',
+            date: '2023-02-20'
+        },
+        {
+            type: 'note',
+            father: 'panel2',
+            content: 'Nota 5 en Panel 2',
+            position: '200,200',
+            date: '2023-03-25'
         }
     ]
 };
